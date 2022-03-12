@@ -1,0 +1,14 @@
+LicenseReader/CSR_Producer.java
+ LicenseReader.CSR_Producer
+LicenseReader/LOA.java
+ LicenseReader.LOA
+LicenseReader/License.java
+ LicenseReader.License
+LicenseReader/CSR_Report_Body.java
+ LicenseReader.CSR_Report_Body
+LicenseReader/CSR_Report.java
+ LicenseReader.CSR_Report
+LicenseReader/CSR_Report_Header.java
+ LicenseReader.CSR_Report_Header
+LicenseReader/reader.java
+ LicenseReader.reader
