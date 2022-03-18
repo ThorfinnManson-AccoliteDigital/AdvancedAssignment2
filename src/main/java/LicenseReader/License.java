@@ -1,9 +1,9 @@
 package LicenseReader;
 
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
-//@XmlRootElement(name = "License")
+@XmlRootElement(name = "License")
+//@XmlAccessorType(XmlAccessType.FIELD)
 //@XmlType(propOrder = {"State_Code", "Resident_Indicator", "License_Class_Code", "License_Number", "State_ID", "License_Issue_Date", "License_Status", "License_Class", "License_Expiration_Date", "Date_Status_Effective", "LOA"})
 public class License
 {
@@ -29,6 +29,7 @@ public class License
 
     private LOA[] LOA;
 
+    @XmlAttribute(name = "State_Code", required = true)
     public String getState_Code ()
     {
         return State_Code;
@@ -39,6 +40,7 @@ public class License
         this.State_Code = State_Code;
     }
 
+    @XmlAttribute(name = "Resident_Indicator", required = true)
     public String getResident_Indicator ()
     {
         return Resident_Indicator;
@@ -49,6 +51,7 @@ public class License
         this.Resident_Indicator = Resident_Indicator;
     }
 
+    @XmlAttribute(name = "License_Class_Code", required = true)
     public String getLicense_Class_Code ()
     {
         return License_Class_Code;
@@ -59,6 +62,7 @@ public class License
         this.License_Class_Code = License_Class_Code;
     }
 
+    @XmlAttribute(name = "License_Number", required = true)
     public String getLicense_Number ()
     {
         return License_Number;
@@ -69,6 +73,7 @@ public class License
         this.License_Number = License_Number;
     }
 
+    @XmlAttribute(name = "State_ID", required = true)
     public String getState_ID ()
     {
         return State_ID;
@@ -79,6 +84,7 @@ public class License
         this.State_ID = State_ID;
     }
 
+    @XmlAttribute(name = "License_Issue_Date", required = true)
     public String getLicense_Issue_Date ()
     {
         return License_Issue_Date;
@@ -89,6 +95,7 @@ public class License
         this.License_Issue_Date = License_Issue_Date;
     }
 
+    @XmlAttribute(name = "License_Status", required = true)
     public String getLicense_Status ()
     {
         return License_Status;
@@ -99,6 +106,7 @@ public class License
         this.License_Status = License_Status;
     }
 
+    @XmlAttribute(name = "License_Class", required = true)
     public String getLicense_Class ()
     {
         return License_Class;
@@ -109,6 +117,7 @@ public class License
         this.License_Class = License_Class;
     }
 
+    @XmlAttribute(name = "License_Expiration_Date", required = true)
     public String getLicense_Expiration_Date ()
     {
         return License_Expiration_Date;
@@ -119,6 +128,7 @@ public class License
         this.License_Expiration_Date = License_Expiration_Date;
     }
 
+    @XmlAttribute(name = "Date_Status_Effective", required = true)
     public String getDate_Status_Effective ()
     {
         return Date_Status_Effective;
@@ -129,6 +139,7 @@ public class License
         this.Date_Status_Effective = Date_Status_Effective;
     }
 
+    @XmlElement(name="LOA")
     public LOA[] getLOA ()
     {
         return LOA;

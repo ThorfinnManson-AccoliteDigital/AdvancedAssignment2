@@ -1,16 +1,26 @@
 package LicenseReader;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
+import java.util.Arrays;
+import java.util.List;
 
-//@XmlRootElement(name = "CSR_Producer")
-//@XmlAccessorType(XmlAccessType.PROPERTY)
+@XmlRootElement(name = "CSR_Producer")
+//@XmlAccessorType(XmlAccessType.FIELD)
 //@XmlType(propOrder = {"License", "Entity_Id", "NIPR_Number", "Secondary_ID"})
 public class CSR_Producer
 {
-    private License[] License;
+    public CSR_Producer() {
+    }
+
+    public CSR_Producer(CSR_Producer copy) {
+        this.setLicense(copy.getLicense());
+        this.setEntity_Id(copy.getEntity_Id());
+        this.setNIPR_Number(copy.getNIPR_Number());
+        this.setSecondary_ID(copy.getSecondary_ID());
+    }
+
+    @XmlElement(name="License")
+    private List<License> License;
 
     private String Entity_Id;
 
@@ -18,16 +28,17 @@ public class CSR_Producer
 
     private String Secondary_ID;
 
-    public License[] getLicense ()
+    public List<License> getLicense ()
     {
         return License;
     }
 
-    public void setLicense (License[] License)
+    public void setLicense (List<License> License)
     {
         this.License = License;
     }
 
+    @XmlAttribute(name = "Entity_Id", required = true)
     public String getEntity_Id ()
     {
         return Entity_Id;
@@ -38,6 +49,7 @@ public class CSR_Producer
         this.Entity_Id = Entity_Id;
     }
 
+    @XmlAttribute(name = "NIPR_Number", required = true)
     public String getNIPR_Number ()
     {
         return NIPR_Number;
@@ -48,6 +60,7 @@ public class CSR_Producer
         this.NIPR_Number = NIPR_Number;
     }
 
+    @XmlAttribute(name = "Secondary_ID", required = true)
     public String getSecondary_ID ()
     {
         return Secondary_ID;
@@ -61,7 +74,7 @@ public class CSR_Producer
     @Override
     public String toString()
     {
-        return "ClassPojo [License = "+License+", Entity_Id = "+Entity_Id+", NIPR_Number = "+NIPR_Number+", Secondary_ID = "+Secondary_ID+"]";
+        return "ClassPojo [License = "+ License +", Entity_Id = "+Entity_Id+", NIPR_Number = "+NIPR_Number+", Secondary_ID = "+Secondary_ID+"]";
     }
 }
 

@@ -5,7 +5,7 @@ import java.io.Serializable;
 
 @XmlRootElement(name = "CSR_Report_Header")
 //@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(propOrder = {"TimeStamp_Created", "Title", "Report_Type"})
+//@XmlType(propOrder = {"TimeStamp_Created", "Title", "Report_Type"})
 public class CSR_Report_Header implements Serializable
 {
     //@XmlElement(name = "TimeStamp_Created")
@@ -17,7 +17,7 @@ public class CSR_Report_Header implements Serializable
     //@XmlElement(name = "Report_Type")
     private String Report_Type;
 
-    @XmlElement(name = "TimeStamp_Created", required = true)
+    @XmlAttribute(name = "TimeStamp_Created", required = true)
     public String getTimeStamp_Created ()
     {
         return TimeStamp_Created;
@@ -28,7 +28,7 @@ public class CSR_Report_Header implements Serializable
         this.TimeStamp_Created = TimeStamp_Created;
     }
 
-    @XmlElement(name = "Title", required = true)
+    @XmlAttribute(name = "Title", required = true)
     public String getTitle ()
     {
         return Title;
@@ -39,7 +39,7 @@ public class CSR_Report_Header implements Serializable
         this.Title = Title;
     }
 
-    @XmlElement(name = "Report_Type", required = true)
+    @XmlAttribute(name = "Report_Type", required = true)
     public String getReport_Type ()
     {
         return Report_Type;

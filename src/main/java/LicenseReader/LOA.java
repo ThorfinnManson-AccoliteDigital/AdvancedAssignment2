@@ -1,10 +1,9 @@
 package LicenseReader;
 
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.*;
 
-//@XmlRootElement(name = "LOA")
-//@XmlType(propOrder = {"LOA_Issue_Date", "LOA_Status", "LOA_Name"})
+@XmlRootElement(name = "LOA")
+//@XmlAccessorType(XmlAccessType.FIELD)
 public class LOA
 {
     private String LOA_Issue_Date;
@@ -13,6 +12,7 @@ public class LOA
 
     private String LOA_Name;
 
+    @XmlAttribute(name = "LOA_Issue_Date", required = true)
     public String getLOA_Issue_Date ()
     {
         return LOA_Issue_Date;
@@ -23,6 +23,7 @@ public class LOA
         this.LOA_Issue_Date = LOA_Issue_Date;
     }
 
+    @XmlAttribute(name = "LOA_Status", required = true)
     public String getLOA_Status ()
     {
         return LOA_Status;
@@ -33,6 +34,7 @@ public class LOA
         this.LOA_Status = LOA_Status;
     }
 
+    @XmlAttribute(name = "LOA_Name", required = true)
     public String getLOA_Name ()
     {
         return LOA_Name;
